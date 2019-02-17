@@ -1,0 +1,50 @@
+body {
+    background-image: url("Textures/Brown.jpg");
+    font-family: 'Roboto', sans-serif;
+    color: #ddd;
+    margin: 0px;
+    overflow: hidden;
+
+}
+h1:hover {
+    cursor: pointer;
+    color: #555;
+}
+h1 {
+    background-image: url('');
+    margin-top: 15%;
+    font-weight: 500;
+    text-align: center;
+    color: #222;
+}
+.head {
+    background-image: url("Textures/Clear.jpg");
+    padding: 16px 16px 25% 16px;  
+    overflow: hidden;
+    box-shadow: #222 0px 3px 7px;
+}
+h3 {
+    margin-top: 25px;
+    text-align: center;
+}
+.campo {
+    overflow: hidden;
+    margin-top: 25px;
+    border:none;
+    border-bottom: 3px solid green;
+    padding: 10px 20px;
+}
+.campo:empty {
+    border-bottom: 3px solid red;
+}
+.campo:focus {
+    background-color: #ddd;
+}
+.campo:hover {
+    background-color: #eee;
+}
+.btn {
+    padding: 16px;
+    margin: 25px 10px;
+    border:none;
+}
