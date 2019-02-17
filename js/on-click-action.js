@@ -48,7 +48,9 @@ const compra_de_arma = () => {
             button()
             show_status()
             player.atk = player.arma.atk
-            espadas_html[0].style = "display: none; transition: 0.5s"
+            espadas_html[0].classList.add("desativar")
+        } else {
+            alert("Você nao tem dinheiro para isso")
         }
     }
     espadas_html[1].onclick = (e) => {
@@ -58,7 +60,9 @@ const compra_de_arma = () => {
             button()
             show_status()
             player.atk = player.arma.atk
-            espadas_html[1].style = "display: none; transition: 0.5s"
+            espadas_html[1].classList.add("desativar")
+        }else {
+            alert("Você nao tem dinheiro para isso")
         }
     }
     espadas_html[2].onclick = (e) => {
@@ -68,7 +72,9 @@ const compra_de_arma = () => {
             button()
             show_status()
             player.atk = player.arma.atk
-            espadas_html[2].style = "display: none; transition: 0.5s"
+            espadas_html[2].classList.add("desativar")
+        }else{
+            alert("Você nao tem dinheiro para isso")
         }
     }
     espadas_html[3].onclick = (e) => {
@@ -79,6 +85,8 @@ const compra_de_arma = () => {
             show_status()
             player.atk = player.arma.atk
             espadas_html[3].style = "display: none; transition: 0.5s"
+        }else{
+            alert("Você nao tem dinheiro para isso")
         }
     }
     espadas_html[4].onclick = (e) => {
@@ -89,7 +97,57 @@ const compra_de_arma = () => {
             show_status()
             player.atk = player.arma.atk
             espadas_html[4].style = "display: none; transition: 0.5s"
+            level2()
+            level2_recriar()
+            alert("Você alcançou um novo patamar, nenhum ser mortal pode mais te derrotar. Você agora arranja uma briga com deuses!!!")
+        }else{
+            alert("Você nao tem dinheiro para isso")
         }
     }
 }
 compra_de_arma()
+function level2_recriar(){
+    espadas.push(new CriarEspada("Espada Lendária", 64, 5000, 5),
+    new CriarEspada("Espada de Divindade", 128, 15000, 1),
+    new CriarEspada("Espada da Tartaruga Espiritual", 256, 50000, 2),
+    new CriarEspada("Espada dos Mil Caminhos", 512, 100000, 3),
+    new CriarEspada("Espada do Demonio Temporal", 2048, 400000, 4),
+    new CriarEspada("Espada do Deus Imperador", 4096, 500000, 5))
+    while(espadas.length > 6){
+        espadas.shift()
+    }
+}
+function level2(){
+    const espadas = document.querySelectorAll("[espada]")
+    const div_pai = document.querySelector(".player")
+    espadas.forEach((e) => {
+        div_pai.removeChild(e)
+    })
+    
+    const espada_de_divindade = document.createElement("div")
+    espada_de_divindade.setAttribute("espada", "")
+    espada_de_divindade.innerHTML = "Espada de Divindade"
+    
+    const espada_da_tartaruga_espiritual = document.createElement("div")
+    espada_da_tartaruga_espiritual.setAttribute("espada", "")
+    espada_da_tartaruga_espiritual.innerHTML = "Espada da Tartaruga Espiritual"
+    
+    const espada_dos_mil_caminhos = document.createElement("div")
+    espada_dos_mil_caminhos.setAttribute("espada", "")
+    espada_dos_mil_caminhos.innerHTML = "Espada dos Mil Caminhos"
+    
+    const espada_do_demonio_temporal = document.createElement("div")
+    espada_do_demonio_temporal.setAttribute("espada", "")
+    espada_do_demonio_temporal.innerHTML = "Espada do Demonio Temporal"
+
+    const espada_do_deus_imperador = document.createElement("div")
+    espada_do_deus_imperador.setAttribute("espada","")
+    espada_do_deus_imperador.innerHTML = "Espada do Deus Imperador"
+
+    div_pai.appendChild(espada_de_divindade)
+    div_pai.appendChild(espada_da_tartaruga_espiritual)
+    div_pai.appendChild(espada_dos_mil_caminhos)
+    div_pai.appendChild(espada_do_demonio_temporal)
+    div_pai.appendChild(espada_do_deus_imperador)
+    compra_de_arma()
+}

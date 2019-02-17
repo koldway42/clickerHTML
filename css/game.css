@@ -18,16 +18,21 @@
     border-collapse: collapse;
     border: 1px solid #aaa;
     padding:16px;
+    background: url("../Textures/Clear.jpg");
+    background-size: cover;
 }
 .player div:hover{
-    background: #999;
+    background: #ccc;
     cursor: pointer;
+    transition: 0.5s;
 }
  .game{
     grid-area: game;
     border: 1px solid #aaa;
     display: flex;
     flex-flow: column;
+    background: url("../Textures/Sword.jpg");
+    background-size: cover;
 }
  .footer{
     grid-area: footer;
@@ -47,10 +52,25 @@ body{
 #click-GUI {
     text-align: center;
     padding: 16px;
-    background-color: #aaa;
-    flex-grow: 0
+    background: url("../Textures/Clear.jpg");
+    background-size: cover;
+    flex-grow: 0;
+    margin: 5vh 25vw;
+    cursor: pointer;
+
+}
+#click-GUI:hover {
+    background: #aaa
+}
+#click-GUI:active {
+    padding: 20px;
+    margin-bottom: 4vh;
+    transition: 0.01s;
 
 }
 .play-area {
     flex-grow: 1
+}
+.desativar {
+    display:none;
 }
