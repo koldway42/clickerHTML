@@ -21,7 +21,11 @@ const rnd = (min = 0, max = 100) => {
     return Math.floor(Math.random() * (max - min) + min)
 }
 
-
+alert("Você acorda em um mundo paralelo, sem lembranças de sua vida passada")
+alert("Ao seu lado, há uma espada embainhada.")
+alert("Presa nela há uma mensagem que diz:")
+alert("Faça história.")
+alert("Determinado, você começa a se aventurar nesse mundo desconhecido, em busca de dinheiro e espadas mais fortes")
 player = new Object
     player.nome = "Koldway42"
     player.arma = espadas[0]
@@ -43,6 +47,9 @@ const button = () => {
             player.dinheiro = player.dinheiro + player.arma.atk;
             console.log("x2")
         }else if(player.arma.nome === "Espada de Thundera" && random <= 50){
+            player.dinheiro = player.dinheiro + (player.arma.atk * 2);
+            console.log("x3")
+        }else if(player.arma.nome === "Espada de Tyr" && random <= 75){
             player.dinheiro = player.dinheiro + (player.arma.atk * 2);
             console.log("x3")
         }
@@ -104,12 +111,20 @@ const compra_de_arma = () => {
         }
     }
     espadas_html[3].onclick = (e) => {
-        if(espadas[4].preco < player.dinheiro){
+        if(espadas[4].preco < player.dinheiro && player.arma.nome !== "Espada de Thundera"){
             player.arma = espadas[4]
             player.dinheiro = player.dinheiro - espadas[4].preco
             button()
             show_status()
             player.atk = player.arma.atk
+            espadas_html[3].classList.add("desativar")
+        }else if(espadas[4].preco < player.dinheiro && player.arma.nome === "Espada de Thundera"){
+            player.arma = espadas[4]
+            player.dinheiro = player.dinheiro - espadas[4].preco
+            button()
+            show_status()
+            player.atk = player.arma.atk
+            alert("Sua espada de Thundera começa a brilhar com sua nova aquisição, ela se põe no ar e é logo em seguida absorvida pela espada de Tyr que então herda seu encantamento, mas o encantamento acabou sofrendo um melhoramento agora tendo 75% de chance de dar o TRIPLO de dano")
             espadas_html[3].classList.add("desativar")
         }else{
             alert("Você nao tem dinheiro para isso")
@@ -125,7 +140,10 @@ const compra_de_arma = () => {
             espadas_html[4].classList.add("desativar")
             level2()
             level2_recriar()
-            alert("Você alcançou um novo patamar, nenhum ser mortal pode mais te derrotar. Você agora arranja uma briga com deuses!!!")
+            alert("Você olha para sua espada satisfeito com seu progresso")
+            alert("Então percebe uma mensagem gravada em algum caractere que você conhece, mesmo não sabendo como")
+            alert("-'Almeje o topo, onde você está é insuficiente, a terra que é a habitação dos deuses te aguarda...' - é o que a mensagem dizia")
+            alert("Você se enche de determinação e começa a sua jornada, para enfrentar os deuses desse mundo.")
         }else if(espadas[5].preco < player.dinheiro && player.arma.nome === "Espada do Demonio Temporal"){
             player.arma = espadas[5]
             player.dinheiro = player.dinheiro - espadas[5].preco
@@ -135,7 +153,8 @@ const compra_de_arma = () => {
             espadas_html[4].classList.add("desativar")
             level3()
             level3_recriar()
-            alert("Após derrotar todos os Deuses, você descobre o mundo onde você vivia era na verdade uma fração mínima do mundo real, e esses deuses que você derrotou, na realidade eram considerados seres muito fracos nesse outro mundo. Então você parte para uma aventura para crescer nessa dimensão superior.")
+            alert("Após derrotar todos os Deuses, você descobre o mundo onde você vivia era na verdade uma fração mínima do mundo real, e esses deuses que você derrotou, na realidade eram considerados seres muito fracos nesse outro mundo.")
+            alert("Você cai no menor continente desse mundo, e começa sua jornada nesse pedaço de terra desconhecido")
         }else if(espadas[5].preco < player.dinheiro && player.arma.nome === "Espada de Tyr"){
             espadas_html[4].classList.add("desativar")
             alert("Após alguns anos nesse mundo, você se torna alguem conhecido e de muita influência venerado por muitos como o Deus do Novo mundo. Com isso você chama a atenção de Kratos, que logo começa a querer sua cabeça.")
@@ -195,11 +214,11 @@ function level2(){
 }
 function level3_recriar(){
     espadas.push(new CriarEspada("Espada do Deus Imperador", 4096, 500000, 5),
-    new CriarEspada("Espada de Aspirante a Aventureiro", 8196, 750000, 1),
-    new CriarEspada("Espada de Material Não Confiavel", 24588, 1500000, 2),
-    new CriarEspada("Espada de Thundera", 49176, 3000000, 3),
-    new CriarEspada("Espada de Tyr", 98352, 6000000, 4),
-    new CriarEspada("Blades of Chaos", 491760, 12000000, 5))
+    new CriarEspada("Espada de Aspirante a Aventureiro", 8196, 2000000, 1),
+    new CriarEspada("Espada de Material Não Confiavel", 24588, 3000000, 2),
+    new CriarEspada("Espada de Thundera", 49176, 9000000, 3),
+    new CriarEspada("Espada de Tyr", 98352, 15000000, 4),
+    new CriarEspada("Blades of Chaos", 491760, 30000000, 5))
     while(espadas.length > 6){
         espadas.shift()
     }
@@ -243,11 +262,11 @@ function Desafio(){
     const nao = document.querySelector("[NAO]")
     sim.onclick = () => {
         alert("Você aceita o desafio de Kratos que logo empunha sua Blades of Chaos e parte para cima de você")
-        alert("Falta eu fazer o resto ;-;")
+        alert("Versão demo, foi mal, até semana que vem termino a batalha contra o kratos ;-;")
     }
     nao.onclick = () => {
         alert("Kratos decide partir para cima de você da qualquer forma. Você não tem escolha")
-        alert("Falta eu fazer o resto ;-;") 
+        alert("Versão demo, foi mal, até semana que vem termino a batalha contra o kratos ;-;") 
     }
 }
 Desafio()

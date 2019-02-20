@@ -90,3 +90,12 @@ body{
 .desafio h2{
     text-align: center;
 }
+@media (max-width: 600px){
+    body{
+        grid-template-rows: 1fr 1fr 6vh;
+        grid-template-areas: 
+            'player player'
+            'game game'
+            'footer footer';
+    }
+}
