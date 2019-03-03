@@ -1,6 +1,17 @@
+const form = document.forms[0]
+const user = document.querySelector(".user")
+form.onsubmit = e => {
+    e.preventDefault()
+    let nickname
+    let formData = new FormData(form)
+    nickname = formData.get("nickname")
+    player.nome = nickname.toString()
+    user.style.display = "none"
+    show_status()
+}
 function CriarEspada(nome = '',atk = 0,preco = 0, indice) {
-    this.preco
-    this.atk
+    this.preco;
+    this.atk;
     return{
         nome,
         atk,
@@ -18,18 +29,18 @@ new CriarEspada("Espada Lendária", 64, 5000, 5),
 ]
 
 const rnd = (min = 0, max = 100) => {
-    return Math.floor(Math.random() * (max - min) + min)
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
-alert("Você acorda em um mundo paralelo, sem lembranças de sua vida passada")
-alert("Ao seu lado, há uma espada embainhada.")
-alert("Presa nela há uma mensagem que diz:")
-alert("Faça história.")
-alert("Determinado, você começa a se aventurar nesse mundo desconhecido, em busca de dinheiro e espadas mais fortes")
+alert("Você acorda em um mundo paralelo, sem lembranças de sua vida passada");
+alert("Ao seu lado, há uma espada embainhada.");
+alert("Presa nela há uma mensagem que diz:");
+alert("Faça história.");
+alert("Determinado, você começa a se aventurar nesse mundo desconhecido, em busca de dinheiro e espadas mais fortes");
 player = new Object
-    player.nome = "Koldway42"
-    player.arma = espadas[0]
-    player.atk = player.arma.atk
+    player.nome= "User"
+    player.arma = espadas[0];
+    player.atk = player.arma.atk;
     player.dinheiro = 0;
 
 const show_status = () => {
@@ -154,10 +165,10 @@ const compra_de_arma = () => {
             level3()
             level3_recriar()
             alert("Após derrotar todos os Deuses, você descobre o mundo onde você vivia era na verdade uma fração mínima do mundo real, e esses deuses que você derrotou, na realidade eram considerados seres muito fracos nesse outro mundo.")
-            alert("Você cai no menor continente desse mundo, e começa sua jornada nesse pedaço de terra desconhecido")
+            alert("Você cai no menor continente desse novo mundo, e começa sua jornada nesse pedaço de terra desconhecido")
         }else if(espadas[5].preco < player.dinheiro && player.arma.nome === "Espada de Tyr"){
             espadas_html[4].classList.add("desativar")
-            alert("Após alguns anos nesse mundo, você se torna alguem conhecido e de muita influência venerado por muitos como o Deus do Novo mundo. Com isso você chama a atenção de Kratos, que logo começa a querer sua cabeça.")
+            alert("Após alguns anos nesse continente, você se torna alguem conhecido e de muita influência venerado por muitos como o Deus do Novo mundo. Com isso você chama a atenção de Kratos, que logo começa a querer sua cabeça.")
             alert("Alguns Dias depois, alguém arromba as portas de sua casa. Kratos esta te desafiando, aceitar o desafio?")
             const kratos = document.querySelector("[Desafio]")
             kratos.style = "display: block;"
@@ -216,9 +227,9 @@ function level3_recriar(){
     espadas.push(new CriarEspada("Espada do Deus Imperador", 4096, 500000, 5),
     new CriarEspada("Espada de Aspirante a Aventureiro", 8196, 2000000, 1),
     new CriarEspada("Espada de Material Não Confiavel", 24588, 3000000, 2),
-    new CriarEspada("Espada de Thundera", 49176, 9000000, 3),
-    new CriarEspada("Espada de Tyr", 98352, 15000000, 4),
-    new CriarEspada("Blades of Chaos", 491760, 30000000, 5))
+    new CriarEspada("Espada de Thundera", 49176, 15000000, 3),
+    new CriarEspada("Espada de Tyr", 98352, 50000000, 4),
+    new CriarEspada("Blades of Chaos", 491760, 1200000000, 5))
     while(espadas.length > 6){
         espadas.shift()
     }

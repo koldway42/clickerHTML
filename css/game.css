@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
 }
- .nav{
+.nav{
     grid-area: nav;
     border: 1px solid #aaa;
     background: #333;
 }
- .player{
+.player{
     grid-area: player;
     display: flex;
     flex-flow: column;
@@ -26,7 +26,7 @@
     cursor: pointer;
     transition: 0.5s;
 }
- .game{
+.game{
     grid-area: game;
     border: 1px solid #aaa;
     display: flex;
@@ -34,7 +34,16 @@
     background: url("../Textures/Sword.jpg");
     background-size: cover;
 }
- .footer{
+.user {
+    position:absolute;
+    padding:40px;
+    top: 25vh;
+    left: 40vw;
+    background: #bbb;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+.footer{
     grid-area: footer;
     border: 1px solid #aaa;
     background: #333;
@@ -97,5 +106,23 @@ body{
             'player player'
             'game game'
             'footer footer';
+    }
+    .desafio {
+        position:absolute;
+        padding:40px;
+        top: 25vh;
+        left: 5vw;
+        background: #aaa;
+        border: 2px solid black;
+        display:none;
+    }
+    .user {
+        position:absolute;
+        padding:40px;
+        top: 25vh;
+        left: 5vw;
+        background: #bbb;
+        border: 2px solid black;
+        box-sizing: border-box;
     }
 }
