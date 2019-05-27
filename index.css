@@ -1,0 +1,33 @@
+body{
+}
+.form{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-flow: column;
+}
+.campo {
+    overflow: hidden;
+    margin-top: 25px;
+    border:none;
+    border-bottom: 3px solid green;
+    padding: 10px 20px;
+    display: block;
+}
+.campo:empty {
+    border-bottom: 3px solid red;
+}
+.campo:focus {
+    background-color: #ddd;
+}
+.campo:hover {
+    background-color: #eee;
+}
+.btn {
+    padding: 16px;
+    margin: 25px 10px;
+    border:none;
+    display: block;
+}
