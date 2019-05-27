@@ -2,52 +2,6 @@
     margin: 0;
     padding: 0;
 }
-.nav{
-    grid-area: nav;
-    border: 1px solid #aaa;
-    background: #333;
-}
-.player{
-    grid-area: player;
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
-    border: 1px solid #aaa;
-}
-.player div{
-    border-collapse: collapse;
-    border: 1px solid #aaa;
-    padding:16px;
-    background: url("../Textures/Clear.jpg");
-    background-size: cover;
-}
-.player div:hover{
-    background: #ccc;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.game{
-    grid-area: game;
-    border: 1px solid #aaa;
-    display: flex;
-    flex-flow: column;
-    background: url("../Textures/Sword.jpg");
-    background-size: cover;
-}
-.user {
-    position:absolute;
-    padding:40px;
-    top: 25vh;
-    left: 40vw;
-    background: #bbb;
-    border: 2px solid black;
-    box-sizing: border-box;
-}
-.footer{
-    grid-area: footer;
-    border: 1px solid #aaa;
-    background: #333;
-}
 body{
     display: grid;
     min-height: 100vh;
@@ -58,46 +12,146 @@ body{
         'player game'
         'footer footer';
 }
-#click-GUI {
-    text-align: center;
-    padding: 16px;
-    background: url("../Textures/Clear.jpg");
+.nav{
+    grid-area: nav;
+    background: #274d5a;
+}
+.player{
+    grid-area: player;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "player-info"
+        "player-shop";
+    height: 100%;
+}
+
+#player-info {
+    grid-area: player-info;
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: #111;
+    background: #faac6a;
     background-size: cover;
-    flex-grow: 0;
-    margin: 5vh 25vw;
-    cursor: pointer;
+}
+#player-name {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    padding: 16px;
+    background: #d46c4f;
+    color: #111;
+}
+#player-info-group1 {
+    text-align: center;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#player-level {
+
+    flex-grow: 1;
+    padding: 16px;
+}
+
+#player-xp {
+    flex-grow: 1;
+    padding: 16px;
+}
+
+#player-info-group2 {
+    text-align: center;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#player-weapon {
+    flex-grow: 1;
+    padding: 16px;
 
 }
+
+#player-money {
+    flex-grow: 1;
+    padding: 16px;
+}
+
+#player-shop {
+    grid-area: player-shop;
+}
+
+
+.game{
+    grid-area: game;
+    display: flex;
+    flex-flow: column;
+    background: #f9e181;
+}
+.footer{
+    grid-area: footer;
+    background: #274d5a;
+}
+#click-GUI {
+    width: 15%;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.8;
+}
 #click-GUI:hover {
-    background: #aaa
+    cursor: pointer;
+    transition: 0.2s;
+    opacity: 1;
 }
 #click-GUI:active {
-    padding: 20px;
-    margin-bottom: 4vh;
-    transition: 0.1s;
+    transition: 0.2s;
+    width: 14%;
+    overflow: hidden;
 
 }
 .play-area {
-    flex-grow: 1
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: #45988e;
 }
-.desativar {
-    display:none;
-}
-.desafio {
-    position:absolute;
-    padding:40px;
-    top: 25vh;
-    left: 40vw;
-    background: #aaa;
-    border: 2px solid black;
-    display:none;
-}
-.desafio button{
-    padding: 10px 16px;
+
+.play-area p {
     margin: 10px;
 }
-.desafio h2{
+
+#hp-bar {
+    background-image: linear-gradient(to left, #f00, #b00);
+    width:50%;
+    height: 5%;
+}
+
+#remaining-hp {
+    background-image: linear-gradient(to left, #0f0, #0b0);
+    transition: 0.5s;
+    height: 100%;
     text-align: center;
+}
+
+.desativar {
+    display:none;
 }
 @media (max-width: 600px){
     body{
@@ -106,23 +160,5 @@ body{
             'player player'
             'game game'
             'footer footer';
-    }
-    .desafio {
-        position:absolute;
-        padding:40px;
-        top: 25vh;
-        left: 5vw;
-        background: #aaa;
-        border: 2px solid black;
-        display:none;
-    }
-    .user {
-        position:absolute;
-        padding:40px;
-        top: 25vh;
-        left: 5vw;
-        background: #bbb;
-        border: 2px solid black;
-        box-sizing: border-box;
     }
 }

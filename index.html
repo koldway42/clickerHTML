@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> 
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/index.css">
     <meta charset="UTF-8">
@@ -10,55 +10,52 @@
     <title>Clicker</title>
 </head>
 <body>
-    <div class="desafio" Desafio>
-            <h3>Aceitar o desafio?</h3>
-            <button SIM>Sim</button>
-            <button NAO>Não</button>
-    </div>
-    <div class="user">
-        <form method="POST" action="" class="form">
-            <h1>Clicker HTML</h1>
-            <input class="campo" type="text" name="nickname" placeholder="Escolha seu nick" id="" required>
-            <input class="btn" type="submit" value="Enviar" submit>
-        </form>
-    </div>
     <nav class="nav">
         <div>
 
         </div>
     </nav>
     <aside class="player">
-            <div espada>
-                Espada de Ferro
+        <div id="player-info">
+            <div id="player-name">
+
             </div>
-             <div espada>
-                Espada de Aço
+            <div id="player-info-group1">
+                <div id="player-level">
+
+                </div>
+                <div id="player-xp">
+
+                </div>
             </div>
-             <div espada>
-                Espada de Adamantium
+            <div id="player-info-group2">
+                <div id="player-weapon">
+
+                </div>
+                <div id="player-money">
+
+                </div>
             </div>
-            <div espada>
-                Espada de Ferro Meteórico
-            </div>
-            <div espada>
-                Espada de Lendária
-            </div>
+        </div>
+        <div id="player-shop">
+
+        </div>
     </aside>
     <article class="game">
         <div class="play-area">
-            <div>
-                <div id="clicks"></div>
-                <div id="nome"></div>
-                <div id="arma"></div>
+            <p>Monster Name</p>
+            <div id="hp-bar" >
+                <div id="remaining-hp">
+                    340
+                </div>
             </div>
         </div>
         <div>
-            <div id="click-GUI">Click</div>
+            <img id="click-GUI" src="Textures/sword-click.png" alt="Click Me!" />
         </div>
     </article>
     <footer class="footer">
         <div>
-
         </div>
     </footer>
     <script src="js/on-click-action.js"></script>
