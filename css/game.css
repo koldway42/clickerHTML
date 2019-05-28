@@ -19,11 +19,12 @@ body{
 .player{
     grid-area: player;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-areas: 
         "player-info"
         "player-shop";
     height: 100%;
+    box-sizing: border-box;
 }
 
 #player-info {
@@ -37,6 +38,7 @@ body{
     color: #111;
     background: #faac6a;
     background-size: cover;
+    box-sizing: border-box;
 }
 #player-name {
     box-sizing: border-box;
@@ -55,6 +57,7 @@ body{
     align-items: center;
     width: 100%;
     flex-grow: 1;
+    box-sizing: border-box;
 }
 
 #player-level {
@@ -77,6 +80,7 @@ body{
     align-items: center;
     width: 100%;
     flex-grow: 1;
+    box-sizing: border-box;
 }
 
 #player-weapon {
@@ -92,8 +96,68 @@ body{
 
 #player-shop {
     grid-area: player-shop;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15% 90%;
+    grid-template-areas: 
+        "player-weapons player-perks"
+        "shop-items shop-items";
+    height: 100%;
+    box-sizing: border-box;
 }
 
+#player-perks {
+    grid-area: player-perks;
+    text-align: center;
+    padding: 16px;
+    background: #d46c4f;
+    box-sizing: border-box;
+}
+#player-perks:hover {
+    background: #b1573f;
+    color: white;
+    cursor: pointer;
+}
+
+#player-weapons {
+    grid-area: player-weapons;
+    text-align: center;
+    padding: 16px;
+    background: #d46c4f;
+    box-sizing: border-box;
+}
+
+#player-weapons:hover {
+    background: #b1573f;
+    color: white;
+    cursor: pointer;
+}
+
+.shop-active {
+    background: #b1573f;
+    color: white;
+}
+
+#shop-items {
+    grid-area: shop-items;
+    overflow: auto;
+}
+
+.shop-item {
+    width: 100%;
+    height: 15%;
+    background: #faac6a;
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.shop-item:hover {
+    background: #8b5f3a;
+    color: #fff;
+    cursor: pointer;
+}
 
 .game{
     grid-area: game;
@@ -161,4 +225,4 @@ body{
             'game game'
             'footer footer';
     }
-}
+} 
