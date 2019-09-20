@@ -285,7 +285,7 @@ function on_button_click() {
 
 setInterval(() => {
         if(player.actual_enemy.hp >= 0) {
-            player.actual_enemy.hp = player.actual_enemy.hp - player.CPS ;
+            player.actual_enemy.hp = player.actual_enemy.hp - (player.CPS * player.atk());
             refresh_monster_life();
         }else {
             respawn_monster();
